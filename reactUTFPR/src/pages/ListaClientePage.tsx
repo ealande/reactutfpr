@@ -31,8 +31,8 @@ const ListaClientePage: React.FC<{}> = ({ }) => {
 
   const navigate = useNavigate();
 
-  const carregarCliente = (id: number | null) => {
-    navigate(`/cliente/${id}`);
+  const carregarCliente = (idCliente: string) => {
+    navigate(`/cliente/${idCliente}`);
   };
 
   return (

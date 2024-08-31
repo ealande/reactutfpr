@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Spinner, Alert } from 'react-bootstrap';
 import ClienteApi from "../api/ClienteApi";
-import { useParams, Params } from "react-router-dom";
-import { ClienteModel } from "../model/ClienteModel";
+import { useParams } from "react-router-dom";
 
 const ClientePage: React.FC<{}> = ({ }) => {
 
-  const [id, setId] = useState<number | null>(null);
+  const [id, setId] = useState(String);
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [hobbies, setHobbies] = useState('');
@@ -16,19 +15,19 @@ const ClientePage: React.FC<{}> = ({ }) => {
   const [variant, setVariant] = useState('');
 
 
-  const { idCliente } = useParams<Params>();
+  const { idCliente } = useParams();
 
-  useEffect(() => {
-    console.log(idCliente);
-    if (idCliente !== undefined) {
-      ClienteApi.buscarPorId(idCliente).then(cliente => {
-        setId(cliente.id);
-        setNome(cliente.nome);
-        setEmail(cliente.email);
-        setHobbies(cliente.hobbies);
-      });
-    }
-  }, [idCliente]);
+  // useEffect(() => {
+  console.log(idCliente);
+  if (idCliente !== undefined) {
+    ClienteApi.buscarPorId(idCliente).then(cliente => {
+      setId(id);
+      setNome(cliente.nome);
+      setEmail(cliente.email);
+      setHobbies(cliente.hobbies);
+    });
+  }
+  //}, [idCliente]);
 
 
   const salvarCliente = () => {

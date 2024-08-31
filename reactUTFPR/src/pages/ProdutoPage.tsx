@@ -5,7 +5,7 @@ import { useParams, Params } from "react-router-dom";
 
 const ProdutoPage: React.FC<{}> = ({ }) => {
 
-  const [id, setId] = useState<number | null>(null);
+  const [id, setId] = useState(String);
   const [nome, setNome] = useState('');
   const [quantidade, setQuantidade] = useState<number | null>(null);
   const [isLoading, setIsloading] = useState(false);
@@ -14,18 +14,18 @@ const ProdutoPage: React.FC<{}> = ({ }) => {
   const [variant, setVariant] = useState('');
 
 
-  const { idProduto } = useParams<Params>();
+  const { idProduto } = useParams();
 
-  useEffect(() => {
-    console.log(idProduto);
-    if (idProduto !== undefined) {
-      ProdutoApi.buscarPorId(idProduto).then(produto => {
-        setId(produto.id);
-        setNome(produto.nome);
-        setQuantidade(produto.quantidade);
-      });
-    }
-  }, [idProduto]);
+  //  useEffect(() => {
+  console.log(idProduto);
+  if (idProduto !== undefined) {
+    ProdutoApi.buscarPorId(idProduto).then(produto => {
+      setId(id);
+      setNome(produto.nome);
+      setQuantidade(produto.quantidade);
+    });
+  }
+  // }, [idProduto]);
 
 
   const salvarproduto = () => {

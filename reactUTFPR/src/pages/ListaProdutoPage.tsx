@@ -31,7 +31,7 @@ const ListaProdutoPage: React.FC<{}> = ({ }) => {
 
   const navigate = useNavigate();
 
-  const carregarProduto = (id: number | null) => {
+  const carregarProduto = (id: string) => {
     navigate(`/produto/${id}`);
   };
 

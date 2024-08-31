@@ -1,5 +1,5 @@
 export interface ProdutoModel {
-  id: number | null;
+  id: string;
   nome: string;
   quantidade: number | null;
 };

@@ -12,11 +12,11 @@ const RotaPage: React.FC<{}> = ({ }) => {
         <Routes>
           <Route path="/cliente" element={<ClientePage />} />
           <Route path="/lista-cliente" element={<ListaClientePage />} />
-          <Route path="cliente/:clienteId" element={<ClientePage />} />
+          <Route path="cliente/:idCliente" element={<ClientePage />} />
 
           <Route path="/produto" element={<ProdutoPage />} />
           <Route path="/lista-produto" element={<ListaProdutoPage />} />
-          <Route path="/produto/:produtoId" element={<ProdutoPage />} />
+          <Route path="/produto/:idProduto" element={<ProdutoPage />} />
         </Routes>
       </BrowserRouter >
     </>

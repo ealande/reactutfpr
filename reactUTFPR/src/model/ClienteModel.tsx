@@ -1,5 +1,5 @@
 export interface ClienteModel {
-  id: number | null;
+  id: string;
   nome: string;
   email: string;
   hobbies: string;
